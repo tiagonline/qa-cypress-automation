@@ -1,12 +1,11 @@
-const { defineConfig } = require('cypress');
-import allureWriter from '@shelex/cypress-allure-plugin/writer'
+import { defineConfig } from 'cypress'
+import allureWriter from '@shelex/cypress-allure-plugin/writer.js'
 
-module.exports = defineConfig({
+export default defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
-      // Allure relatório
       allureWriter(on, config)
-      return config;
+      return config
     },
     retries: {
       runMode: 2,
@@ -19,4 +18,4 @@ module.exports = defineConfig({
   },
   video: false,
   parallel: true
-});
+})
