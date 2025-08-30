@@ -1,10 +1,7 @@
-FROM cypress/included:13.7.0
+FROM cypress/included:13.7.3
 
 WORKDIR /e2e
-
-COPY package.json package-lock.json* ./
-RUN npm install
-
 COPY . .
+RUN npm ci
 
-CMD ["npm", "test"]
+CMD ["npx", "cypress", "run", "--browser", "chrome"]
