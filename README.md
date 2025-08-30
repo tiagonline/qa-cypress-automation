@@ -1,45 +1,96 @@
 # QA Cypress Automation
 
-Estrutura inicial para automação E2E com Cypress, Ajv, Allure, Docker e CI.
+Automação de testes E2E para aplicações web, utilizando o Cypress. O projeto é organizado por Page Objects para facilitar manutenção, reutilização e escalabilidade.
 
-## Principais recursos
+---
 
-- **Cypress** para automação de testes E2E
-- **Ajv** para validação de contratos JSON
-- **Allure** para geração de relatórios
-- **Docker** para ambiente isolado
-- **CI** para execução automatizada (exemplo: GitHub Actions)
+## Sumário
 
-## Instalação
+- [Sobre o Projeto](#sobre-o-projeto)
+- [Estrutura de Pastas](#estrutura-de-pastas)
+- [Pré-requisitos](#pré-requisitos)
+- [Instalação e Uso](#instalação-e-uso)
+- [Evidências](#evidências)
+- [Boas Práticas](#boas-práticas)
+- [Contribuição](#contribuição)
+- [Contato](#contato)
 
-```bash
-npm install
-```
+---
 
-## Execução dos testes
+## Sobre o Projeto
 
-```bash
-npm test
-```
+Automação E2E de testes para aplicações web com Cypress, separando lógica de teste e mapeamento de elementos via Page Objects.
 
-## Geração e abertura do relatório Allure
+---
 
-```bash
-npm run allure:generate
-npm run allure:open
-```
-
-## Estrutura de diretórios
+## Estrutura de Pastas
 
 ```
 cypress/
-  ├── e2e/
-  ├── fixtures/
-  ├── support/
-docker/
-.github/
+├── e2e/           # Testes end-to-end (specs)
+├── pageObjects/   # Page Objects centralizados
+├── fixtures/      # Dados estáticos para os testes
+├── screenshots/   # Evidências em imagem geradas pelos testes
+├── videos/        # Evidências em vídeo geradas pelos testes
+├── support/       # Comandos customizados e configurações globais
+└── ...
 ```
 
-## Exemplo de execução em CI
+---
 
-Veja exemplos na pasta `.github/workflows/`.
+## Pré-requisitos
+
+- [Node.js 18+](https://nodejs.org/)
+- [npm](https://www.npmjs.com/)
+- [Git](https://git-scm.com/)
+
+---
+
+## Instalação e Uso
+
+Clone o repositório e instale as dependências:
+
+```bash
+git clone https://github.com/tiagonline/qa-cypress-automation.git
+cd qa-cypress-automation
+npm install
+```
+
+Rodando os testes:
+
+- Interativo (UI do Cypress): `npx cypress open`
+- Headless (terminal): `npx cypress run`
+- Teste específico: `npx cypress run --spec "cypress/e2e/nomeDoTeste.spec.js"`
+
+---
+
+## Evidências
+
+- **Screenshots:** geradas em `cypress/screenshots/` em falhas ou via `cy.screenshot()`
+- **Vídeos:** gerados em `cypress/videos/` ao rodar testes no modo headless
+
+---
+
+## Boas Práticas
+
+- Use Page Objects para separar mapeamento de elementos da lógica de teste
+- Utilize comandos customizados em `cypress/support/commands.js` para ações recorrentes
+- Mantenha dados sensíveis fora do repositório (use `.env`)
+- Utilize `fixtures` para dados estáticos
+- Escreva testes independentes e reutilizáveis
+
+---
+
+## Contribuição
+
+1. Faça um fork do projeto
+2. Crie uma branch (`git checkout -b minha-feature`)
+3. Commit (`git commit -m 'Minha feature'`)
+4. Push (`git push origin minha-feature`)
+5. Abra um Pull Request
+
+---
+
+## Contato
+
+Abra uma issue ou envie e-mail para [tiagonline@gmail.com].
