@@ -1,0 +1,11 @@
+# Node modules
+node_modules/
+
+# Cypress evidências
+cypress/screenshots/
+cypress/videos/
+
+# Outros arquivos e pastas comuns
+.env
+.DS_Store
+*.log
