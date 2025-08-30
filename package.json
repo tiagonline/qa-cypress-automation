@@ -8,8 +8,8 @@
     "allure:open": "allure open allure-report"
   },
   "devDependencies": {
-    "cypress": "^13.7.0",
+    "@shelex/cypress-allure-plugin": "^2.41.2",
     "ajv": "^6.12.6",
-    "@shelex/cypress-allure-plugin": "^2.24.0"
+    "cypress": "^13.7.0"
   }
 }
