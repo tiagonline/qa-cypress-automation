@@ -19,6 +19,5 @@ describe('Validação de menus após login', () => {
     cy.contains('Analytics').should('be.visible');
     cy.contains('Relatórios').should('be.visible');
     cy.contains('Configurações').should('be.visible');
-    // Adicione ou ajuste os nomes dos menus conforme os disponíveis
   });
 });

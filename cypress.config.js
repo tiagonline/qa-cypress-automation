@@ -12,10 +12,6 @@ export default defineConfig({
       openMode: 0
     }
   },
-  reporter: '@shelex/cypress-allure-plugin',
-  reporterOptions: {
-    allureResultsPath: 'allure-results'
-  },
   video: false,
   parallel: true
 })
