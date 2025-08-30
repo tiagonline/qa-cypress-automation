@@ -12,7 +12,7 @@ export default defineConfig({
       openMode: 0
     }
   },
-  reporter: 'allure',
+  reporter: '@shelex/cypress-allure-plugin',
   reporterOptions: {
     allureResultsPath: 'allure-results'
   },
