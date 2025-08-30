@@ -12,16 +12,24 @@ describe('Fluxo de Login', () => {
     home.validateMainComponents();
   });
 
+  it('Deve exibir mensagem de erro ao tentar logar com senha incorreta', () => {
+    home.visit();
+    home.getEntrarButton().click();
+
+    login.validateLoginComponents();
+    login.fillLoginForm('tiagoffline@gmail.com', 'senha_incorreta');
+    login.submit();
+
+    cy.contains('Invalid login credentials').should('be.visible');
+  });
+
   it('Deve acessar a página de login, preencher e logar com sucesso', () => {
     home.visit();
     home.getEntrarButton().click();
 
     login.validateLoginComponents();
-    login.fillLoginForm('usuario@email.com', 'senhaSuperSecreta'); // Troque para valores válidos!
+    login.fillLoginForm('tiagoffline@gmail.com', '123456');
     login.submit();
-
-    // Exemplo de intercept para mockar resposta do login (ajuste conforme API real)
-    // cy.intercept('POST', '/api/login', { statusCode: 200, body: { token: 'abc123' } });
 
     dashboard.validateDashboardComponents();
   });
