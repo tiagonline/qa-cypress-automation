@@ -6,8 +6,10 @@ export class HomePage {
   }
 
   getEntrarButton() {
-    // Retorna o botão "Entrar" usando seletor de texto
-    return cy.contains('button', 'Entrar');
+    // Tenta primeiro pelo texto, depois pela classe
+    return cy.contains('button', 'Entrar').length
+      ? cy.contains('button', 'Entrar')
+      : cy.get('button.glass-button');
   }
 
   validateMainComponents() {

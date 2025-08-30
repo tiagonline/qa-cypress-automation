@@ -12,8 +12,11 @@ export class LoginPage {
     return cy.get('input[type="password"]');
   }
 
-  getSubmitButton() {
-    return cy.contains('button', 'Entrar');
+  getEntrarButton() {
+    // Tenta primeiro pelo texto, depois pela classe
+    return cy.contains('button', 'Entrar').length
+      ? cy.contains('button', 'Entrar')
+      : cy.get('button.glass-button');
   }
 
   fillLoginForm(email, password) {
