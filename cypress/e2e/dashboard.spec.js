@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-import LoginPage from '../support/pageObjects/LoginPage';
+import LoginPage from '../pageObjects/LoginPage';
 
 describe('Validação de menus após login', () => {
   const loginPage = new LoginPage();
