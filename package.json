@@ -1,1 +1,15 @@
-{\n  "name": "qa-cypress-automation",\n  "version": "1.0.0",\n  "description": "Estrutura de automação E2E com Cypress, Ajv, Allure, Docker e CI.",\n  "scripts": {\n    "test": "cypress run",\n    "allure:generate": "allure generate allure-results --clean -o allure-report",\n    "allure:open": "allure open allure-report"\n  },\n  "devDependencies": {\n    "cypress": "^13.7.0",\n    "ajv": "^6.12.6",\n    "@shelex/cypress-allure-plugin": "^2.24.0"\n  }\n}
+{
+  "name": "qa-cypress-automation",
+  "version": "1.0.0",
+  "description": "Estrutura de automação E2E com Cypress, Ajv, Allure, Docker e CI.",
+  "scripts": {
+    "test": "cypress run",
+    "allure:generate": "allure generate allure-results --clean -o allure-report",
+    "allure:open": "allure open allure-report"
+  },
+  "devDependencies": {
+    "cypress": "^13.7.0",
+    "ajv": "^6.12.6",
+    "@shelex/cypress-allure-plugin": "^2.24.0"
+  }
+}

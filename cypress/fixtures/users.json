@@ -1,1 +1,12 @@
-[ { "email": "tiagoffline@gmail.com", "password": "123456", "valid": true }, { "email": "tiagoffline@gmail.com", "password": "senha_incorreta", "valid": false } ]
+[
+    {
+        "email": "tiagoffline@gmail.com",
+        "password": "123456",
+        "valid": true
+    },
+    {
+        "email": "tiagoffline@gmail.com",
+        "password": "senha_incorreta",
+        "valid": false
+    }
+]
