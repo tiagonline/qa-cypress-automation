@@ -1,20 +1,22 @@
-// Page Object para a página de Dashboard
-export class DashboardPage {
+export default class DashboardPage {
   visit() {
     cy.visit('/dashboard');
   }
 
   getWelcomeText() {
-    return cy.contains('Bem-vindo');
+    return cy.contains('Entrar na sua conta');
   }
 
   getLogoutButton() {
     return cy.contains('button', 'Sair');
   }
 
+  submitLogout() {
+    this.getLogoutButton().click();
+  }
+
   validateDashboardComponents() {
     this.getWelcomeText().should('be.visible');
     this.getLogoutButton().should('be.visible');
-    // Adicione outras validações específicas do dashboard conforme necessário
   }
 }

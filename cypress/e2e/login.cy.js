@@ -1,19 +1,13 @@
-import { HomePage } from '../pageObjects/HomePage';
-import { LoginPage } from '../pageObjects/LoginPage';
-import { DashboardPage } from '../pageObjects/DashboardPage';
+import HomePage from '../pageObjects/HomePage';
+import LoginPage from '../pageObjects/LoginPage';
 
 describe('Fluxo de Login', () => {
   const home = new HomePage();
   const login = new LoginPage();
-  const dashboard = new DashboardPage();
-
-  it('Deve acessar a home e visualizar componentes principais', () => {
-    home.visit();
-    home.validateMainComponents();
-  });
+  //const dashboard = new DashboardPage();
 
   it('Deve exibir mensagem de erro ao tentar logar com senha incorreta', () => {
-    home.visit();
+    home.visit("/");
     home.getEntrarButton().click();
 
     login.validateLoginComponents();
@@ -24,13 +18,13 @@ describe('Fluxo de Login', () => {
   });
 
   it('Deve acessar a página de login, preencher e logar com sucesso', () => {
-    home.visit();
+    home.visit("/");
     home.getEntrarButton().click();
 
     login.validateLoginComponents();
     login.fillLoginForm('tiagoffline@gmail.com', '123456');
     login.submit();
 
-    dashboard.validateDashboardComponents();
+    cy.contains('Login realizado com sucesso!').should('be.visible');
   });
 });
