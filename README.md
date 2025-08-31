@@ -40,7 +40,7 @@ cypress/
 
 ## Pré-requisitos
 
-- [Node.js 18+](https://nodejs.org/)
+- [Node.js](https://nodejs.org/)
 - [npm](https://www.npmjs.com/)
 - [Git](https://git-scm.com/)
 
@@ -69,6 +69,17 @@ Rodando os testes:
 - **Screenshots:** geradas em `cypress/screenshots/` em falhas ou via `cy.screenshot()`
 - **Vídeos:** gerados em `cypress/videos/` ao rodar testes no modo headless
 
+---
+
+## Como visualizar o relatório Allure dos testes E2E
+
+Após baixar o artefato do relatório no GitHub Actions, execute o comando abaixo para abrir o relatório Allure no navegador:
+
+```bash
+npx allure open ./allure-report
+```
+
+````
 ---
 
 ## Boas Práticas
